@@ -1,0 +1,146 @@
+<Project>
+  <Name>Console Tic-Tac-Toe</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Overview</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Program</Name>
+        <Access>Public</Access>
+        <Location left="217" top="10" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void Main()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Game</Name>
+        <Access>Public</Access>
+        <Location left="217" top="229" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private GameBoard board</Member>
+        <Member type="Field">private Player player1</Member>
+        <Member type="Field">private Player player2</Member>
+        <Member type="Method">public void PlayGame()</Member>
+        <Member type="Method">public void SetupGame()</Member>
+        <Member type="Method">private int CoinToss()</Member>
+        <Member type="Method">private void GameOver()</Member>
+        <Member type="Method">private void NamePlayers(Player player1, Player player2)</Member>
+        <Member type="Method">private void SelectBoardType()</Member>
+        <Member type="Method">private void SelectSymbol()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="373" top="545" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private string name</Member>
+        <Member type="Field">private int playerNumber</Member>
+        <Member type="Field">private char symbol</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public int PlayerNumber { get; set; }</Member>
+        <Member type="Property">public char Symbol { get; set; }</Member>
+        <Member type="Method">public void MarkBoard(GameBoard board)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StandardBoard</Name>
+        <Access>Public</Access>
+        <Location left="59" top="917" />
+        <Size width="219" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public char CheckForWinner(char[] layout)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BombBoard</Name>
+        <Access>Public</Access>
+        <Location left="396" top="917" />
+        <Size width="228" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public char CheckForWinner(char[] layout)</Member>
+        <Member type="Method">public bool CheckForBomb()</Member>
+        <Member type="Method">public void SetBomb()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GameBoard</Name>
+        <Access>Public</Access>
+        <Location left="59" top="545" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private char[] currentLayout</Member>
+        <Member type="Field">private bool isFull</Member>
+        <Member type="Property">public bool IsFull { get; }</Member>
+        <Member type="Property">public string CurrentLayout { get; set; }</Member>
+        <Member type="Method">public void PrintBoard()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <Label>Begins the</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="2">
+        <Label>Has a</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>293</X>
+          <Y>501</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>452</X>
+          <Y>501</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="5">
+        <Label>Has a</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>293</X>
+          <Y>501</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>134</X>
+          <Y>511</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="2" second="5">
+        <Label>Plays on</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
