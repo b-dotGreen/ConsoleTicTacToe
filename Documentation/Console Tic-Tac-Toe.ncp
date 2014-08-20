@@ -52,7 +52,7 @@
         <Location left="59" top="917" />
         <Size width="219" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Method">public char CheckForWinner(char[] layout)</Member>
+        <Member type="Method">public char CheckForWinner(string layout)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">

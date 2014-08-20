@@ -5,11 +5,7 @@ using System.Text;
 
 namespace ConsoleTicTacToe
 {
-    class Program
+    class Player
     {
-        // The entry point for the program
-        static void Main()
-        {
-        }
     }
 }
