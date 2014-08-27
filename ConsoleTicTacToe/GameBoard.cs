@@ -7,8 +7,8 @@ namespace ConsoleTicTacToe
 {
     public abstract class GameBoard
     {
-        private string currentLayout;
-        private bool isFull;
+        protected string currentLayout;
+        protected bool isFull;
 
         // Gets and Sets the currentLayout of the board
         public string CurrentLayout
@@ -23,14 +23,6 @@ namespace ConsoleTicTacToe
             get { return isFull; }
         }
 
-        public GameBoard()
-        {
-            // Code for constructor goes here.
-        }        
-
-        public void PrintBoard
-        {
-            // Implement printing of currentLayout here
-        }
+        public void PrintBoard();
     }
 }
