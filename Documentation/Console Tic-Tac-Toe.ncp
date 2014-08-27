@@ -53,6 +53,7 @@
         <Size width="219" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public char CheckForWinner(string layout)</Member>
+        <Member type="Method">public void PrintBoard()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -72,8 +73,8 @@
         <Location left="59" top="545" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private char[] currentLayout</Member>
-        <Member type="Field">private bool isFull</Member>
+        <Member type="Field">protected char[] currentLayout</Member>
+        <Member type="Field">protected bool isFull</Member>
         <Member type="Property">public bool IsFull { get; }</Member>
         <Member type="Property">public string CurrentLayout { get; set; }</Member>
         <Member type="Method">public void PrintBoard()</Member>
