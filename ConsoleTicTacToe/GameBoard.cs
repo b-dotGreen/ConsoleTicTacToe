@@ -23,6 +23,7 @@ namespace ConsoleTicTacToe
             get { return isFull; }
         }
 
-        public void PrintBoard();
+        public abstract void PrintBoard();
+        public abstract string CheckForWinner();
     }
 }

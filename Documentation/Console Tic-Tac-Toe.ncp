@@ -52,8 +52,8 @@
         <Location left="59" top="917" />
         <Size width="219" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Method">public char CheckForWinner(string layout)</Member>
-        <Member type="Method">public void PrintBoard()</Member>
+        <Member type="Method">public override char CheckForWinner()</Member>
+        <Member type="Method">public override void PrintBoard()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -77,7 +77,8 @@
         <Member type="Field">protected bool isFull</Member>
         <Member type="Property">public bool IsFull { get; }</Member>
         <Member type="Property">public string CurrentLayout { get; set; }</Member>
-        <Member type="Method">public void PrintBoard()</Member>
+        <Member type="Method">public abstract void PrintBoard()</Member>
+        <Member type="Method">public abstract char CheckForWinner()</Member>
         <Modifier>Abstract</Modifier>
       </Entity>
     </Entities>
