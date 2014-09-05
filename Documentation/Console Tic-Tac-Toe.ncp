@@ -39,11 +39,12 @@
         <Collapsed>False</Collapsed>
         <Member type="Field">private string name</Member>
         <Member type="Field">private int playerNumber</Member>
-        <Member type="Field">private char symbol</Member>
+        <Member type="Field">private string symbol</Member>
         <Member type="Property">public string Name { get; set; }</Member>
         <Member type="Property">public int PlayerNumber { get; set; }</Member>
         <Member type="Property">public char Symbol { get; set; }</Member>
-        <Member type="Method">public void MarkBoard(GameBoard board)</Member>
+        <Member type="Method">public bool MarkBoard(GameBoard board, int position)</Member>
+        <Member type="Method">private string ReconstructLayout(GameBoard board, string[] marks)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -54,6 +55,7 @@
         <Collapsed>False</Collapsed>
         <Member type="Method">public override char CheckForWinner()</Member>
         <Member type="Method">public override void PrintBoard()</Member>
+        <Member type="Method">private bool ThreeStringCompare(string s1, string s2, string s3)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
