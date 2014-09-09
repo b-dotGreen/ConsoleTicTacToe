@@ -17,11 +17,12 @@
         <Name>Game</Name>
         <Access>Public</Access>
         <Location left="217" top="229" />
-        <Size width="162" height="247" />
+        <Size width="162" height="315" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private GameBoard board</Member>
         <Member type="Field">private Player player1</Member>
         <Member type="Field">private Player player2</Member>
+        <Member type="Field">private int firstMove</Member>
         <Member type="Method">public void PlayGame()</Member>
         <Member type="Method">public void SetupGame()</Member>
         <Member type="Method">private int CoinToss()</Member>
@@ -29,13 +30,16 @@
         <Member type="Method">private void NamePlayers(Player player1, Player player2)</Member>
         <Member type="Method">private void SelectBoardType()</Member>
         <Member type="Method">private void SelectSymbol()</Member>
+        <Member type="Method">private void DisplayWelcomeMessage()</Member>
+        <Member type="Method">private void PlayerMove(Player player)</Member>
+        <Member type="Method">private void DeclareWinner(string winnerSymbol)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Player</Name>
         <Access>Public</Access>
-        <Location left="373" top="545" />
-        <Size width="162" height="216" />
+        <Location left="385" top="678" />
+        <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private string name</Member>
         <Member type="Field">private int playerNumber</Member>
@@ -45,23 +49,25 @@
         <Member type="Property">public char Symbol { get; set; }</Member>
         <Member type="Method">public bool MarkBoard(GameBoard board, int position)</Member>
         <Member type="Method">private string ReconstructLayout(GameBoard board, string[] marks)</Member>
+        <Member type="Constructor">public Player(string defaultName, string defaultSymbol, int defaultPlayerNumber)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>StandardBoard</Name>
         <Access>Public</Access>
-        <Location left="59" top="917" />
+        <Location left="54" top="1152" />
         <Size width="219" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public override char CheckForWinner()</Member>
         <Member type="Method">public override void PrintBoard()</Member>
         <Member type="Method">private bool ThreeStringCompare(string s1, string s2, string s3)</Member>
+        <Member type="Method">public bool IsFull()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>BombBoard</Name>
         <Access>Public</Access>
-        <Location left="396" top="917" />
+        <Location left="391" top="1152" />
         <Size width="228" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public char CheckForWinner(char[] layout)</Member>
@@ -72,15 +78,15 @@
       <Entity type="Class">
         <Name>GameBoard</Name>
         <Access>Public</Access>
-        <Location left="59" top="545" />
+        <Location left="71" top="678" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">protected char[] currentLayout</Member>
         <Member type="Field">protected bool isFull</Member>
-        <Member type="Property">public bool IsFull { get; }</Member>
         <Member type="Property">public string CurrentLayout { get; set; }</Member>
         <Member type="Method">public abstract void PrintBoard()</Member>
-        <Member type="Method">public abstract char CheckForWinner()</Member>
+        <Member type="Method">public abstract char CheckForWinner(bool boardIsFull)</Member>
+        <Member type="Method">public abstract bool IsFull()</Member>
         <Modifier>Abstract</Modifier>
       </Entity>
     </Entities>
@@ -100,11 +106,11 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>293</X>
-          <Y>501</Y>
+          <Y>569</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>452</X>
-          <Y>501</Y>
+          <X>464</X>
+          <Y>634</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
@@ -117,11 +123,11 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>293</X>
-          <Y>501</Y>
+          <Y>569</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>134</X>
-          <Y>511</Y>
+          <X>146</X>
+          <Y>644</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>

@@ -17,13 +17,8 @@ namespace ConsoleTicTacToe
             set { currentLayout = value; }
         }
 
-        // Gets the status of the board, whether or not all moves have been made
-        public bool IsFull
-        {
-            get { return isFull; }
-        }
-
+        public abstract bool IsFull();
         public abstract void PrintBoard();
-        public abstract string CheckForWinner();
+        public abstract string CheckForWinner(bool boardIsFull);
     }
 }

@@ -9,10 +9,40 @@ namespace ConsoleTicTacToe
     {
         private const int MAX_MARKS_PER_ROW = 3;
 
+        // Constructor
         public StandardBoard()
         {
             this.isFull = false;
             this.currentLayout = "1|2|3|4|5|6|7|8|9";        
+        }
+
+        public override bool IsFull()
+        {
+            string[] marks = currentLayout.Split('|');
+            int markCount = 0;
+
+            foreach (string s in marks)
+            {
+                if (s=="1" || s=="2" || s=="3" || s=="4" || s=="5" || s=="6" || s=="7" || s=="8" || s=="9")
+                {
+                    // Do nothing
+                }
+                else
+                {
+                    markCount++;
+                }
+            }
+
+            if (markCount == 9)
+            {
+                this.isFull = true;
+            }
+            else
+            {
+                this.isFull = false;
+            }
+
+            return this.isFull;
         }
 
         public override void PrintBoard()
@@ -38,7 +68,7 @@ namespace ConsoleTicTacToe
             }
         }
         
-        public override string CheckForWinner()
+        public override string CheckForWinner(bool boardIsFull)
         {
             string[] marks = currentLayout.Split('|');
 
@@ -80,7 +110,15 @@ namespace ConsoleTicTacToe
             // Otherwise it's a tie game
             else
             {
-                return "NOBODY";
+                if (boardIsFull)
+                {
+                    return "CAT'S GAME";
+                }
+                else
+                {
+                    return "CONTINUE";
+                }
+                
             }
         }
 
